@@ -20,7 +20,7 @@
                 </div>
             </div>
         </transition-group>
-        <span v-if="error" class="label label-danger">Error loading list.</span>
+        <span v-if="error" class="label label-danger">Error loading posts.</span>
         <span v-if="posts && display < numberOfPosts()" class="load-more absolute cursor-pointer text-grey-darker font-semibold py-2">Scroll for more posts...</span>
         <div v-if="postsNotAvailable && loading" class="w-full mt-200p">
             <div class="load-1 w-3/5 mx-auto text-center">
