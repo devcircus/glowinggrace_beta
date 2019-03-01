@@ -13,6 +13,8 @@ export default {
             this.loading = true;
             return Post.all().then( () => {
                 this.loading = false;
+            }).catch( () => {
+                this.loading = false;
             });
         },
         numberOfPosts () {
