@@ -1,0 +1,20 @@
+@tailwind preflight;
+
+@tailwind components;
+
+/**
+ * Add custom components here
+ */
+@import "components/main";
+
+ /**
+ * Add styling for pages
+ */
+ @import "components/pages";
+
+@tailwind utilities;
+
+/**
+ * Add custom utilities
+ */
+ @import "utilities/main";

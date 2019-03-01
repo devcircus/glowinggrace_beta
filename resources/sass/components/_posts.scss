@@ -1,0 +1,105 @@
+.post-body h1, .post-body h2, .post-body h3, .post-body p, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor p {
+    @apply .font-lato;
+}
+
+.post-body h1, .post-body h2, .post-body h3, .ql-editor h1, .ql-editor h2, .ql-editor h3 {
+    @apply .font-black .text-grey-darkest .mb-2;
+}
+
+.post-body h1, .ql-editor h1 {
+    @apply .flex .w-full .justify-center .items-center .content-center .mb-4 .text-3xl .uppercase;
+}
+
+.post-body h1:before, .post-body h1:after, .ql-editor h1:before,  .ql-editor h1:after{
+    content: '\a0';
+    margin: 0 20px 0 0;
+    line-height: 1em;
+    flex: 1 0 20px;
+    border-top: 4px solid transparent;
+    border-image-slice: 1;
+    position: relative;
+    top: 0.5em;
+}
+.post-body h1:before, .ql-editor h1:before {
+    -moz-border-image: -moz-linear-gradient(top, #3490DC 0%, #38C172 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #3490DC 0%, #38C172 100%);
+    border-image: linear-gradient(to right, #3490DC 0%, #38C172 100%);
+}
+.post-body h1:after, .ql-editor h1:after {
+    -moz-border-image: -moz-linear-gradient(top, #38C172 0%, #3490DC 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #38C172 0%, #3490DC 100%);
+    border-image: linear-gradient(to right, #38C172 0%, #3490DC 100%);
+    margin: 0 0 0 20px;
+}
+
+.post-body h2, .ql-editor h2 {
+    @apply .flex .w-full .mb-4 .text-2xl .content-center .items-center .uppercase;
+}b
+
+.post-body h2:before, .post-body h2:after, .ql-editor h2:before,  .ql-editor h2:after{
+    content: '\a0';
+    border-top: 2px solid transparent;
+    border-image-slice: 1;
+}
+.post-body h2:after, .ql-editor h2:after {
+    flex: 1 0 20px;
+    line-height: 1em;
+    margin-top: 20px;
+    position: relative;
+    top: 0.5em;
+    -moz-border-image: -moz-linear-gradient(top, #3490DC 0%, #38C172 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #3490DC 0%, #38C172 100%);
+    border-image: linear-gradient(to right, #3490DC 0%, #38C172 100%);
+    margin: 0 0 0 20px;
+}
+
+.post-body h3, .ql-editor h3 {
+    @apply .text-2xl .pb-1 .mb-2;
+}
+
+.post-body p, .ql-editor p {
+    @apply .text-grey-darker .text-lg .leading-normal;
+}
+
+.post-body img, .ql-editor img {
+    @apply .border-2 .border-grey-darker .shadow-offset m-4;
+}
+
+.post-body blockquote, .ql-editor blockquote {
+    @apply .flex .font-audrey .text-white .text-3xl .bg-blue-light .border-4 .border-blue .rounded;
+    @apply .shadow-md .px-6 py-6 .my-8 .items-center .leading-none;
+}
+
+.post-body ol, .ql-editor ol {
+    max-width: 350px;
+    counter-reset: my-awesome-counter;
+    list-style: none;
+    padding-left: 40px;
+}
+.post-body ol li, .ql-editor ol li {
+    margin: 0 0 0.5rem 0;
+    counter-increment: my-awesome-counter;
+    position: relative;
+}
+.post-body ol li::before,.ql-editor ol li::before {
+    content: counter(my-awesome-counter);
+    color: #38C172;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    --size: 32px;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    transform: rotate(-10deg);
+    background: black;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 0 #999;
+}
+
+.post-body pre.ql-syntax, .ql-editor pre.ql-syntax {
+    @apply .bg-grey-lighter .p-4 .border-2 .border-grey .rounded .shadow-md;
+}

@@ -1,0 +1,13 @@
+{
+    "/js/main.js": "/js/main.js",
+    "/css/app.css": "/css/app.css",
+    "/css/vendor/notify.css": "/css/vendor/notify.css",
+    "/js/vendor/quill.min.js": "/js/vendor/quill.min.js",
+    "/js/vendor/quill.min.js.map": "/js/vendor/quill.min.js.map",
+    "/js/vendor/quill-image-resize.min.js": "/js/vendor/quill-image-resize.min.js",
+    "/js/vendor/highlight.min.js": "/js/vendor/highlight.min.js",
+    "/js/vendor/cloudinary-core-shrinkwrap.min.js": "/js/vendor/cloudinary-core-shrinkwrap.min.js",
+    "/js/vendor/cloudinary-core-shrinkwrap.min.js.map": "/js/vendor/cloudinary-core-shrinkwrap.min.js.map",
+    "/css/vendor/hybrid.min.css": "/css/vendor/hybrid.min.css",
+    "/css/vendor/vue-multiselect.css": "/css/vendor/vue-multiselect.css"
+}
