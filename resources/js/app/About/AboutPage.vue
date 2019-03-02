@@ -8,9 +8,13 @@
                 </div>
                 <div class="w-full lg:w-3/4">
                     <p class="text-green-lightest text-2xl lg:mt-4">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        My name is Kimberlyn Stone and I am the author of this blog, GlowingGrace.com. I am also the curator of the <a href="https://www.facebook.com/likeaglowstick/" class="no-underline text-blue-darker">facebook</a>/<a href="https://www.instagram.com/glowinggrace/" class="no-underline text-blue-darker">instagram</a> group with the same name.
+                    </p>
+                    <p class="text-green-lightest text-2xl lg:mt-4">
+                        I am a blessed wife, mother of 4, mimi to Mila, and a child of God. I like to create, read, and spend time teaching self-forgiveness, positive body image, and freedom from codependency, to women who, like me, made mistakes when they were younger. I am an advocate for ACDA.
+                    </p>
+                    <p class="text-green-lightest text-2xl lg:mt-4">
+                        I live in Dallas, TX with my adoring husband, Clay and daughter Greenlee.
                     </p>
                 </div>
             </div>
