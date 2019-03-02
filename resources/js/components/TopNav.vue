@@ -184,6 +184,7 @@
     }
     .nav-menu {
         @apply .flex .list-reset .w-full;
+        margin-top: 14px;
     }
     .large-logo {
         @apply .hidden .border-4 .border-white .shadow-md .rounded-lg;
@@ -278,7 +279,7 @@
         height: 18px;
     }
     .router-link-active {
-        border-bottom: 8px solid #a2f5bf;
+        border-bottom: 6px solid #a2f5bf;
     }
     .active-none {
         border-bottom: none !important;
