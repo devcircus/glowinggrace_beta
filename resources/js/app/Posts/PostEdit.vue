@@ -9,11 +9,15 @@
                 <div v-if="existing_featured_image" class="flex flex-col mt-4">
                     <span class="text-base text-blue uppercase whitespace-no-wrap mb-2">Current Featured Image:</span>
                     <img class="mr-2 mb-2 border-2 border-black rounded shadow w-160p h-auto" :src="existing_featured_image.thumb_size_url"/>
-                    <button @click.prevent="deleteCurrentFeaturedImage()"
-                            class="block w-24 h-6 bg-transparent no-underline leading-normal hover:bg-red text-red font-normal text-sm hover:text-white px-2 mb-8 border border-red hover:border-transparent rounded danger_parent_reverse primary_parent_flip">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 mr-2 icon-close-circle inline-block align-middle"><circle cx="12" cy="12" r="10" class="danger"></circle><path class="danger" d="M13.41 12l2.83 2.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 1 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12z"></path></svg>
-                        <span class="inline-block leading-none">Delete</span>
-                    </button>
+
+                    <a href="#" @click.prevent="deleteCurrentFeaturedImage()" class="flex rounded overflow-hidden w-48 h-8 no-underline mb-8">
+                        <button class="block text-white text-sm shadow-md bg-red hover:bg-red-dark text-sm py-2 px-4 font-sans tracking-wide uppercase font-bold whitespace-no-wrap">
+                            delete
+                        </button>
+                        <div class="bg-red-light shadow-md p-2 rounded-r">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 icon-close"><path class="secondary" fill-rule="evenodd" d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"></path></svg>
+                        </div>
+                    </a>
                 </div>
                 <featured-image file-label="Set Featured Image" v-model="post.featured_image"></featured-image>
                 <div class="flex w-1/4 content-center items-center">

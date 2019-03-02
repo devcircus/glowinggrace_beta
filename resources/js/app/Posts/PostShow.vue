@@ -5,10 +5,14 @@
                 <h1 class="post-title text-4xl mb-2 font-normal text-grey-darkest uppercase">{{ post.title }}</h1>
                 <span class="text-sm text-grey-dark">published {{ formattedAgoDate(post.published_at) }} by <span class="text-grey-darkest italic">{{ post.user.name }}</span></span>
             </div>
-            <router-link :to="{ name: 'edit-post', params: { postId: post.id } }" v-if="auth.loggedIn"
-                         class="block w-24 h-6 bg-transparent no-underline leading-normal hover:bg-green text-green font-normal text-sm hover:text-white px-2 ml-auto border border-green hover:border-transparent rounded primary_parent primary_parent_flip active-none">
-                <svg xmlns="http://www.w3.org/2000/svg" pointer-events="all" viewBox="0 0 24 24" class="w-4 h-4 mr-2 icon-edit inline-block align-middle"><path d="M4 14a1 1 0 0 1 .3-.7l11-11a1 1 0 0 1 1.4 0l3 3a1 1 0 0 1 0 1.4l-11 11a1 1 0 0 1-.7.3H5a1 1 0 0 1-1-1v-3z"></path><rect width="20" height="2" x="2" y="20" rx="1"></rect></svg>
-                <span class="inline-block leading-none">Edit</span>
+
+            <router-link :to="{ name: 'edit-post', params: { postId: post.id } }" v-if="auth.loggedIn" class="flex rounded overflow-hidden ml-auto w-48 h-8 no-underline">
+                <button class="block text-white text-sm shadow-md bg-orange hover:bg-orange-dark text-sm py-2 px-4 font-sans tracking-wide uppercase font-bold whitespace-no-wrap">
+                    edit
+                </button>
+                <div class="bg-orange-light shadow-md p-2 rounded-r">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 icon-edit"><path class="secondary" d="M4 14a1 1 0 0 1 .3-.7l11-11a1 1 0 0 1 1.4 0l3 3a1 1 0 0 1 0 1.4l-11 11a1 1 0 0 1-.7.3H5a1 1 0 0 1-1-1v-3z"></path><rect width="20" height="2" x="2" y="20" class="secondary" rx="1"></rect></svg>
+                </div>
             </router-link>
         </div>
         <div class="flex flex-col w-full">
