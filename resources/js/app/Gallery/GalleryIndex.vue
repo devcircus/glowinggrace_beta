@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col w-full -ml-2 mb-4">
-        <h1 class="post-title text-4xl mb-2 font-normal text-grey-darkest uppercase">Our Gallery</h1>
+        <h1 class="post-title text-4xl mb-2 font-normal text-grey-darkest uppercase">Gallery</h1>
+        <h2 class="post-title text-xl mb-2 font-normal text-grey-darker uppercase mb-8">Photos from my blog posts</h2>
         <div v-masonry transition-duration="0.3s" item-selector=".item" :gutter="10" :column-width="200">
             <div v-masonry-tile class="item" v-for="image in images" :key="image.id">
                 <masonry-card :image="image"></masonry-card>
