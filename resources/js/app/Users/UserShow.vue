@@ -14,33 +14,33 @@
                     </div>
                 </div>
             </div>
-            <div class="user-details w-full h-auto">
-                <div class="flex flex-col px-4 rounded-b-lg">
-                    <div class="flex w-full h-full pb-4 pt-20 lg:pt-4 border-b border-grey-light">
+            <div class="user-details w-full h-auto px-4">
+                <div class="flex flex-col rounded-b-lg">
+                    <div class="flex w-full pt-20 lg:pt-4">
                         <div class="flex flex-col">
                             <h1 class="text-2xl text-grey-darkest leading-none">{{ user.name }}</h1>
                             <span class="text-sm text-grey-dar mb-8">{{ user.email }}</span>
-                            <div class="mb-4">
-                                <div class="flex">
-                                    <input class="w-64 h-8 px-2 border border-grey-light shadow rounded-lg mb-4 mr-2" type="text" v-model="user.email" placeholder="New Email"/>
-                                    <button @click.prevent="changeEmail()" type="button" class="text-sm border border-blue bg-white text-blue rounded hover:bg-blue hover:border-transparent hover:text-white align-middle h-8 px-4">Change Email</button>
-                                </div>
-                                <div class="flex">
-                                    <input class="w-64 h-8 px-2 border border-grey-light shadow rounded-lg mr-2" type="password" v-model="user.password" placeholder="New Password"/>
-                                    <button @click.prevent="changePassword()" type="button" class="text-sm border border-blue bg-white text-blue rounded hover:bg-blue hover:border-transparent hover:text-white align-middle h-8 px-4">Change Password</button>
-                                </div>
-                            </div>
                         </div>
-                        <div class="flex flex-col ml-auto">
+                        <div class="flex ml-auto">
                             <span class="text-lg font-semibold text-grey-darkest"># of posts: <span class="italic font-normal">{{ user.posts_count }}</span></span>
                         </div>
                     </div>
-                    <div class="flex flex-col w-full h-full py-4">
-                        <div v-for="post in user.posts" :key="post.id" class="border-b broder-grey-light py-4">
-                            <h1 class="text-base text-grey-darkest uppercase mb-2">{{ post.title }}</h1>
-                            <p class="text-sm text-grey-darker">{{ post.summary }}</p>
+                    <div class="flex flex-col border-b-2 border-blue pb-8">
+                        <div class="flex">
+                            <input class="w-64 h-8 px-2 border border-grey-light shadow rounded-lg mb-4 mr-2" type="text" v-model="user.email" placeholder="New Email"/>
+                            <button @click.prevent="changeEmail()" type="button" class="text-sm border border-blue bg-white text-blue rounded hover:bg-blue hover:border-transparent hover:text-white align-middle h-8 px-4">Set Email</button>
+                        </div>
+                        <div class="flex">
+                            <input class="w-64 h-8 px-2 border border-grey-light shadow rounded-lg mr-2" type="text" v-model="user.name" placeholder="New Name"/>
+                            <button @click.prevent="changeName()" type="button" class="text-sm border border-blue bg-white text-blue rounded hover:bg-blue hover:border-transparent hover:text-white align-middle h-8 px-4">Set Name</button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="flex flex-col w-full h-full px-4">
+                <div v-for="post in user.posts" :key="post.id" class="border-b broder-grey-light py-4">
+                    <h1 class="text-base text-grey-darkest uppercase mb-2">{{ post.title }}</h1>
+                    <p class="text-sm text-grey-darker">{{ post.summary }}</p>
                 </div>
             </div>
         </div>
@@ -103,8 +103,8 @@
             changeEmail () {
                 console.log('changing email');
             },
-            changePassword () {
-                console.log('changing password');
+            changeName () {
+                console.log('changing Name');
             }
         }
     }
@@ -117,7 +117,7 @@
         transition: all ease 0.3s;
     }
     .user-header {
-        @apply .flex .justify-center .bg-blue .rounded-t-lg .h-32 .p-4 .w-full;
+        @apply .flex .justify-center .bg-blue .rounded-t-lg .h-32 .w-full;
     }
     .user-avatar {
         @apply .z-10;
