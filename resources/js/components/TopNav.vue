@@ -38,11 +38,25 @@
                             <span class="inline-block">Cart</span>
                         </router-link>
                     </li> -->
-                    <li class="menu-item mobile-menu-item">
-                        <a href="#" @click.prevent="doLogout()" class="mobile-menu-link">
+                    <div v-if="auth.loggedIn">
+                        <li class="menu-item mobile-menu-item">
+                            <a id="sm-profile" href="#" @click.prevent="goToProfilePage($event)" class="mobile-menu-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-link-icon mr-1"><path class="primary" d="M11 4h3a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V6h-2v12h2v-2a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1h-3v1a1 1 0 0 1-1.27.96l-6.98-2A1 1 0 0 1 2 19V5a1 1 0 0 1 .75-.97l6.98-2A1 1 0 0 1 11 3v1z"></path><path class="primary" d="M18.59 11l-1.3-1.3c-.94-.94.47-2.35 1.42-1.4l3 3a1 1 0 0 1 0 1.4l-3 3c-.95.95-2.36-.46-1.42-1.4l1.3-1.3H14a1 1 0 0 1 0-2h4.59z"></path></svg>
+                                <span class="inline-block">Profile</span>
+                            </a>
+                        </li>
+                        <li class="menu-item mobile-menu-item">
+                            <a id="sm-logout" href="#" @click.prevent="doLogout($event)" class="mobile-menu-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-link-icon mr-1"><path class="primary" d="M11 4h3a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V6h-2v12h2v-2a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1h-3v1a1 1 0 0 1-1.27.96l-6.98-2A1 1 0 0 1 2 19V5a1 1 0 0 1 .75-.97l6.98-2A1 1 0 0 1 11 3v1z"></path><path class="primary" d="M18.59 11l-1.3-1.3c-.94-.94.47-2.35 1.42-1.4l3 3a1 1 0 0 1 0 1.4l-3 3c-.95.95-2.36-.46-1.42-1.4l1.3-1.3H14a1 1 0 0 1 0-2h4.59z"></path></svg>
+                                <span class="inline-block">Logout</span>
+                            </a>
+                        </li>
+                    </div>
+                    <li v-else class="menu-item mobile-menu-item">
+                        <router-link :to="{ name: 'login' }" @click.native="hideMenuDropdown()" class="mobile-menu-link active-none">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-link-icon mr-1"><path class="primary" d="M11 4h3a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V6h-2v12h2v-2a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1h-3v1a1 1 0 0 1-1.27.96l-6.98-2A1 1 0 0 1 2 19V5a1 1 0 0 1 .75-.97l6.98-2A1 1 0 0 1 11 3v1z"></path><path class="primary" d="M18.59 11l-1.3-1.3c-.94-.94.47-2.35 1.42-1.4l3 3a1 1 0 0 1 0 1.4l-3 3c-.95.95-2.36-.46-1.42-1.4l1.3-1.3H14a1 1 0 0 1 0-2h4.59z"></path></svg>
-                            <span class="inline-block">Logout</span>
-                        </a>
+                            <span class="inline-block">Login</span>
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -79,13 +93,13 @@
                             </a>
                             <ul v-if="showLoginDropdown" class="dropdown-menu login-dropdown-menu">
                                 <li href="#" class="dropdown-menu-item">
-                                    <a href="#" @click.prevent="doLogout()" class="dropdown-link">
+                                    <a id="lg-logout" href="#" @click.prevent="doLogout($event)" class="dropdown-link">
                                         <span class="mr-1 inline-block">Logout</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-link-icon"><path class="primary" d="M11 4h3a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V6h-2v12h2v-2a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1h-3v1a1 1 0 0 1-1.27.96l-6.98-2A1 1 0 0 1 2 19V5a1 1 0 0 1 .75-.97l6.98-2A1 1 0 0 1 11 3v1z"></path><path class="primary" d="M18.59 11l-1.3-1.3c-.94-.94.47-2.35 1.42-1.4l3 3a1 1 0 0 1 0 1.4l-3 3c-.95.95-2.36-.46-1.42-1.4l1.3-1.3H14a1 1 0 0 1 0-2h4.59z"></path></svg>
                                     </a>
                                 </li>
                                 <li href="#" class="dropdown-menu-item">
-                                    <a href="#" @click.prevent="goToProfilePage()" class="dropdown-link">
+                                    <a id="lg-profile" href="#" @click.prevent="goToProfilePage($event)" class="dropdown-link">
                                         <span class="mr-1 inline-block">Profile</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-link-icon"><path class="primary" d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"></path><path class="primary" d="M21 20v-1a5 5 0 0 0-5-5H8a5 5 0 0 0-5 5v1c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z"></path></svg>
                                     </a>
@@ -123,19 +137,28 @@
             toggleMenuDropdown () {
                 this.showMenuDropdown = ! this.showMenuDropdown;
             },
-            doLogout () {
-                this.toggleLoginDropdown();
+            doLogout (e) {
+                if (e.target.id == 'lg-logout') {
+                    this.toggleLoginDropdown();
+                } else {
+                    this.toggleMenuDropdown();
+                }
+
                 User.logout().then( () => {
                     this.$dispatch('notification', 'Successfully logged out!');
                 });
                 this.$router.push({ name: 'home' });
             },
-            goToProfilePage () {
+            goToProfilePage (e) {
+                if (e.target.id == 'lg-profile') {
+                    this.toggleLoginDropdown();
+                } else {
+                    this.toggleMenuDropdown();
+                }
                 this.toggleLoginDropdown();
                 this.$router.push({ name: 'profile' });
             },
             hideMenuDropdown () {
-                console.log('clicked');
                 this.toggleMenuDropdown();
             }
         }
@@ -183,7 +206,7 @@
         }
     }
     .hamburger-menu-button {
-        @apply .flex .items-center .px-3 .py-2 .border .rounded .text-green-lighter .border-green-light;
+        @apply .flex .items-center .px-3 .py-2 .border-2 .rounded .text-green-lighter .border-green-light;
         &:hover {
             @apply .text-white .border-white;
         }
@@ -202,10 +225,9 @@
     }
     .menu-item {
         @apply .text-center .h-8 .cursor-pointer;
-        padding: .3rem .5rem;
     }
     .mobile-menu-item {
-        @apply .text-left .h-16 .p-4 .leading-loose .border-b .border-grey-light;
+        @apply .text-left .h-16 .leading-loose .border-b .border-grey-light;
         &:hover {
             @apply .bg-green-light;
             .mobile-menu-link {
@@ -242,7 +264,7 @@
         }
     }
     .mobile-menu-link {
-        @apply .w-full .text-green-light .font-lato .font-normal .uppercase .align-middle .block no-underline;
+        @apply .w-full .text-green-light .font-lato .font-normal .uppercase .align-middle .block .no-underline .p-4;
     }
     .dropdown-link {
         @apply .text-green-light font-normal uppercase block;
