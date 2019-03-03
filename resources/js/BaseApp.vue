@@ -1,6 +1,7 @@
 <template>
     <div class="min-h-screen flex flex-col">
         <vue-snotify class="w-full"></vue-snotify>
+        <social-float-bar></social-float-bar>
         <div class="flex flex-col w-full">
             <top-nav></top-nav>
         </div>
@@ -15,9 +16,10 @@
     import TopNav from 'Components/TopNav.vue';
     import MainContent from 'Components/MainContent.vue';
     import AppModal from 'GeneralComponents/AppModal.vue';
+    import SocialFloatBar from 'GeneralComponents/SocialFloatBar.vue';
 
     export default {
-        components: { TopNav, MainContent, AppModal },
+        components: { TopNav, MainContent, SocialFloatBar, AppModal },
         created () {
             this.setupListeners();
         },
