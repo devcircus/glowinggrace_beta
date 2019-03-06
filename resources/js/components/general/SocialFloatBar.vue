@@ -40,9 +40,6 @@
         opacity: 2;
     }
     #share svg {
-        position: relative;
-        left: 50%;
-        top: 50%;
         transform: translateX(-50%) translatey(-50%);
         -webkit-transform: translateX(-50%) translatey(-50%);
         -moz-transform: translateX(-50%) translatey(-50%);
