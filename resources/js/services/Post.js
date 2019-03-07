@@ -43,11 +43,9 @@ class Post extends Service {
             };
 
             axios(requestOptions).then(response => {
-                this.handleSuccessfulCreate(response.data.data);
-
                 return resolve();
             }).catch(error => {
-                this.handleUnsuccessfulCreate(error.response);
+                console.log(error.response);
 
                 return reject();
             });
@@ -104,15 +102,6 @@ class Post extends Service {
         formData.append('published_at', published_at);
 
         return formData;
-    }
-
-    handleSuccessfulCreate (post) {
-        store.posts.push(post);
-        this.orderPostsBy('created_at', 'desc');
-    }
-
-    handleUnsuccessfulCreate (error) {
-        console.log(error);
     }
 
     handleSuccessfulUpdate (data) {
